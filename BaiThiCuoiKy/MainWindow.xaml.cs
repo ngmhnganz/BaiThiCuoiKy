@@ -24,5 +24,10 @@ namespace BaiThiCuoiKy
         {
             InitializeComponent();
         }
+
+        private void BtnXoa_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

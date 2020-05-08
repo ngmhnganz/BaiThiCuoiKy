@@ -47,7 +47,7 @@
             <WrapPanel Grid.Row="0">
                 <Button x:Name="btnLuu" Content="Lưu" Margin="10" Width="100"/>
                 <Button x:Name="btnLamMoi" Content="Làm Mơi" Margin="10" Width="100"/>
-                <Button x:Name="btnXoa" Content="Xoá" Margin="10" Width="100"/>
+                <Button x:Name="btnXoa" Content="Xoá" Margin="10" Width="100" Click="BtnXoa_Click"/>
 
             </WrapPanel>
         </Grid>
