@@ -11,45 +11,9 @@
             <ColumnDefinition Width="200"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <GroupBox Grid.Column="0">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="150"></RowDefinition>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="1" Text="Họ và tên" Margin="5"/>
-                <TextBlock Grid.Row="2" Text="MSSV" Margin="5"/>
-                <TextBlock Grid.Row="3" Text="Lớp" Margin="5"/>
-                <TextBlock Grid.Row="4" Text="Giới tính" Margin="5"/>
-                <TextBlock Grid.Row="5" Text="Địa chỉ" Margin="5"/>
-                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtHoVaTen" Margin="5" Text="Jack Ma"/>
-                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtMSSV" Margin="5" Text="K19411" />
-                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtLop" Margin="5" Text="K19911"/>
-                <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtGioiTinh" Margin="5" Text="Nam"/>
-                <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtDiaChi" Margin="5" Text="haha"/>
-            </Grid>
-        </GroupBox>
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="90"></RowDefinition>
-                <RowDefinition Height="150"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <WrapPanel Grid.Row="0">
-                <Button x:Name="btnLuu" Content="Lưu" Margin="10" Width="100"/>
-                <Button x:Name="btnLamMoi" Content="Làm Mơi" Margin="10" Width="100"/>
-                <Button x:Name="btnXoa" Content="Xoá" Margin="10" Width="100"/>
-
-            </WrapPanel>
-        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
     </Grid>
 </Window>
