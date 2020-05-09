@@ -22,6 +22,7 @@ namespace BaiThiCuoiKy
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<TaiLieu> taiLieuList = new List<TaiLieu>();
         public MainWindow()
         {
             InitializeComponent();
@@ -57,7 +58,6 @@ namespace BaiThiCuoiKy
                 txbTenTacGia.Visibility = Visibility.Hidden;
                 txtSoTrang.Visibility = Visibility.Hidden;
                 txbSoTrang.Visibility = Visibility.Hidden;
-
             }
         }
 
@@ -141,7 +141,36 @@ namespace BaiThiCuoiKy
             #endregion
             if (!conLoi)
             {
-                //Xử lý lưu
+                lvTaiLieu.Items.Clear();
+                if (cmbTheLoai.SelectedIndex == 0)
+                {
+                    Sach sach = new Sach();
+                    sach.maTaiLieu = txtMaTaiLieu.Text;
+                    sach.tenTaiLieu = txtTenTaiLieu.Text;
+                    sach.ngayPhatHanh = dtpNgayPhatHanh.SelectedDate.Value;
+                    sach.tenTacGia = txtTenTacGia.Text;
+                    sach.soTrang = txtSoTrang.Text;
+                    sach.theLoai = cmbTheLoai.Text;
+                    taiLieuList.Add(sach);
+
+                }
+               else if (cmbTheLoai.SelectedIndex == 1)
+                {
+                    TapChi tapChi = new TapChi();
+                    tapChi.maTaiLieu = txtMaTaiLieu.Text;
+                    tapChi.tenTaiLieu = txtTenTaiLieu.Text;
+                    tapChi.ngayPhatHanh= dtpNgayPhatHanh.SelectedDate.Value;
+                    tapChi.theLoai = cmbTheLoai.Text;
+                    tapChi.chuDe = txtChuDe.Text;
+                    tapChi.Gia = Convert.ToDouble(txtGia.Text);
+                    taiLieuList.Add(tapChi);
+
+                }
+                foreach (TaiLieu taiLieu in taiLieuList)
+                {
+                    lvTaiLieu.Items.Add(taiLieu);
+                }
+
             }
 
         }
@@ -184,7 +213,7 @@ namespace BaiThiCuoiKy
 
         private void btnThongKe_Click(object sender, RoutedEventArgs e)
         {
-            ThongKe thongKeWindow = new ThongKe();
+            ThongKe thongKeWindow = new ThongKe(taiLieuList);
             thongKeWindow.Show();
         }
     }

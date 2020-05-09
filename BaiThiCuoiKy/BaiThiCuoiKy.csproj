@@ -55,7 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Sach.cs" />
     <Compile Include="TaiLieu.cs" />
+    <Compile Include="TapChi.cs" />
     <Compile Include="ThongKe.xaml.cs">
       <DependentUpon>ThongKe.xaml</DependentUpon>
     </Compile>

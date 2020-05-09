@@ -17,11 +17,14 @@ namespace BaiThiCuoiKy
     /// <summary>
     /// Interaction logic for ThongKe.xaml
     /// </summary>
-    public partial class ThongKe : Window
+    public partial class ThongKe : MainWindow
     {
-        public ThongKe()
+        List<TaiLieu> taiLieuList = new List<TaiLieu>();
+        public ThongKe(List<TaiLieu> list)
         {
             InitializeComponent();
+            taiLieuList = new List<TaiLieu>(list);
+
         }
     }
 }
