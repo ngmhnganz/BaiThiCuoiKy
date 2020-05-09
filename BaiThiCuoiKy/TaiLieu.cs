@@ -24,5 +24,9 @@ namespace BaiThiCuoiKy
             TenTacGia = tenTacGia;
             SoTrang = soTrang;
         }
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
