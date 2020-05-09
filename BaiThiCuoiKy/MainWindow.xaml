@@ -79,15 +79,18 @@
                     <TextBlock Text="Mã tài liệu còn trống" VerticalAlignment="Bottom" Grid.Column="1" Margin="10,0,0,0" Foreground="Red" FontSize="9" FontStyle="Italic" Visibility="Hidden" x:Name="ChuaNhapMaTaiLieu"></TextBlock>
                     <TextBlock Text="Tên tài liệu" Grid.Row="1" VerticalAlignment="Center"></TextBlock>
                     <TextBlock Text="Tên tài liệu còn trống" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1" Margin="10,0,0,0" Foreground="Red" FontSize="9" FontStyle="Italic" Visibility="Hidden" x:Name="ChuaNhapTenTaiLieu"></TextBlock>
-
                     <TextBlock Text="Ngày phát hành" Grid.Row="2" VerticalAlignment="Center"></TextBlock>
                     <TextBlock Text="Bạn chưa chọn ngày phát hành" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="2" Margin="10,0,0,0" Foreground="Red" FontSize="9" FontStyle="Italic" Visibility="Hidden" x:Name="ChuaChonNgayPhatHanh"></TextBlock>
-
                     <TextBlock Text="Thể loại" Grid.Column="2" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="Bạn chưa chọn thế loại" VerticalAlignment="Bottom" Grid.Column="3" Grid.Row="0" Margin="10,0,0,0" Foreground="Red" FontSize="9" FontStyle="Italic" Visibility="Hidden" x:Name="ChuaChonTheLoai"></TextBlock>
                     <TextBlock x:Name="txbTenTacGia" Text="Tên tác giả" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Visibility="Hidden"></TextBlock>
+                    <TextBlock Text="Tên tác giả còn trống" VerticalAlignment="Bottom" Grid.Column="3" Grid.Row="1" Margin="10,0,0,0" Foreground="Red" FontSize="9" FontStyle="Italic" Visibility="Hidden" x:Name="ChuaNhapTenTacGia"></TextBlock>
                     <TextBlock x:Name="txbChuDe" Text="Chủ Đề" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Visibility="Hidden"></TextBlock>
+                    <TextBlock Text="Chủ đề còn trống" VerticalAlignment="Bottom" Grid.Column="3" Grid.Row="1" Margin="10,0,0,0" Foreground="Red" FontSize="9" FontStyle="Italic" Visibility="Hidden" x:Name="ChuaNhapChuDe"></TextBlock>
                     <TextBlock x:Name="txbSoTrang" Text="Số trang" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Visibility="Hidden"></TextBlock>
+                    <TextBlock Text="Số trang còn trống" VerticalAlignment="Bottom" Grid.Column="3" Grid.Row="2" Margin="10,0,0,0" Foreground="Red" FontSize="9" FontStyle="Italic" Visibility="Hidden" x:Name="ChuaNhapSoTrang"></TextBlock>
                     <TextBlock x:Name="txbGia" Text="Giá" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Visibility="Hidden"></TextBlock>
+                    <TextBlock Text="Giá còn trống" VerticalAlignment="Bottom" Grid.Column="3" Grid.Row="2" Margin="10,0,0,0" Foreground="Red" FontSize="9" FontStyle="Italic" Visibility="Hidden" x:Name="ChuaNhapGia"></TextBlock>
                     <!--#endregion-->
                     <!--#region Dữ liệu vào-->
                     <TextBox x:Name="txtMaTaiLieu"
@@ -101,12 +104,12 @@
                              VerticalAlignment="Center"
                              Text="Giao trinh"
                              Width="170"
-                             Margin="0,5,5,5"></TextBox>
+                             Margin="0,5,5,5" TextChanged="txtTenTaiLieu_TextChanged"></TextBox>
                     <DatePicker x:Name="dtpNgayPhatHanh"
                                 Grid.Row="2" Grid.Column="1"
                                 VerticalAlignment="Center"
                                 Margin="0,5,5,5"
-                                Width="170"></DatePicker>
+                                Width="170" SelectedDateChanged="dtpNgayPhatHanh_SelectedDateChanged"></DatePicker>
                     <ComboBox x:Name="cmbTheLoai"
                               Grid.Row="0" Grid.Column="3"
                               VerticalAlignment="Center"
@@ -121,26 +124,26 @@
                              Text="Hồ Trung Thành"
                              Width="170"
                              Margin="0,5,5,5"
-                             Visibility="Hidden"></TextBox>
+                             Visibility="Hidden" TextChanged="txtTenTacGia_TextChanged"></TextBox>
                     <TextBox x:Name="txtChuDe"
                              Grid.Row="1" Grid.Column="3"
                              VerticalAlignment="Center"
                              Text="Thời Trang"
                              Width="170"
                              Margin="0,5,5,5"
-                             Visibility="Hidden"></TextBox>
+                             Visibility="Hidden" TextChanged="txtChuDe_TextChanged"></TextBox>
                     <TextBox x:Name="txtSoTrang"
                              Grid.Row="2" Grid.Column="3"
                              VerticalAlignment="Center"
                              Text="500"
                              Width="170"
-                             Margin="0,5,5,5" Visibility="Hidden"></TextBox>
+                             Margin="0,5,5,5" Visibility="Hidden" TextChanged="txtSoTrang_TextChanged"></TextBox>
                     <TextBox x:Name="txtGia"
                              Grid.Row="2" Grid.Column="3"
                              VerticalAlignment="Center"
                              Text="500"
                              Width="170"
-                             Margin="0,5,5,5" Visibility="Hidden"></TextBox>
+                             Margin="0,5,5,5" Visibility="Hidden" TextChanged="txtGia_TextChanged"></TextBox>
                     <!--#endregion-->
                 </Grid>
             </GroupBox>
