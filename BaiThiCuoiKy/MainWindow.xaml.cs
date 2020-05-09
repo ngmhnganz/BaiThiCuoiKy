@@ -22,7 +22,7 @@ namespace BaiThiCuoiKy
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<TaiLieu> taiLieuList = new List<TaiLieu>();
+        static  List<TaiLieu> taiLieuList = new List<TaiLieu>();
         List<TapChi> tapChiList = new List<TapChi>();
         List<Sach> sachList = new List<Sach>();
         public MainWindow()
@@ -30,15 +30,10 @@ namespace BaiThiCuoiKy
             InitializeComponent();
         }
 
-        private void BtnXoa_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
         private void cmbTheLoai_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ChuaChonTheLoai.Visibility = Visibility.Hidden;
-            if (cmbTheLoai.SelectedIndex==0)
+            if (cmbTheLoai.SelectedIndex == 0)
             {
                 txtTenTacGia.Visibility = Visibility.Visible;
                 txbTenTacGia.Visibility = Visibility.Visible;
@@ -50,7 +45,7 @@ namespace BaiThiCuoiKy
                 txtGia.Visibility = Visibility.Hidden;
 
             }
-            else if (cmbTheLoai.SelectedIndex==1)
+            else if (cmbTheLoai.SelectedIndex == 1)
             {
                 txbChuDe.Visibility = Visibility.Visible;
                 txtChuDe.Visibility = Visibility.Visible;
@@ -65,7 +60,7 @@ namespace BaiThiCuoiKy
 
         private void btnThoat_Click(object sender, RoutedEventArgs e)
         {
-             MessageBoxResult result = MessageBox.Show("Bạn muốn thoát chương trình?", "Thoát chương trình", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("Bạn muốn thoát chương trình?", "Thoát chương trình", MessageBoxButton.YesNo);
             switch (result)
             {
                 case MessageBoxResult.Yes:
@@ -157,12 +152,12 @@ namespace BaiThiCuoiKy
                     taiLieuList.Add(sach);
 
                 }
-               else if (cmbTheLoai.SelectedIndex == 1)
+                else if (cmbTheLoai.SelectedIndex == 1)
                 {
                     TapChi tapChi = new TapChi();
                     tapChi.maTaiLieu = txtMaTaiLieu.Text;
                     tapChi.tenTaiLieu = txtTenTaiLieu.Text;
-                    tapChi.ngayPhatHanh= dtpNgayPhatHanh.SelectedDate.Value;
+                    tapChi.ngayPhatHanh = dtpNgayPhatHanh.SelectedDate.Value;
                     tapChi.theLoai = cmbTheLoai.Text;
                     tapChi.chuDe = txtChuDe.Text;
                     tapChi.Gia = Convert.ToDouble(txtGia.Text);
@@ -219,6 +214,46 @@ namespace BaiThiCuoiKy
         {
             ThongKe thongKeWindow = new ThongKe(tapChiList, sachList);
             thongKeWindow.Show();
+        }
+
+        private void BtnXoa_Click_1(object sender, RoutedEventArgs e)
+        {
+            int nRemove = lvTaiLieu.Items.IndexOf(lvTaiLieu.SelectedItem);
+            if (nRemove < 0)
+            {
+                MessageBox.Show("Bạn chưa chọn nội dung để xóa", "CHỌN NỘI DUNG", MessageBoxButton.OK);
+            }
+            else
+            {
+                MessageBoxResult ret = MessageBox.Show("Bạn muốn xóa ?", "Hỏi xóa ", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (ret == MessageBoxResult.No)
+                    return;
+                else
+                {
+                    var dsChon = lvTaiLieu.SelectedItems;
+                    while (dsChon.Count > 0)
+                    {
+                        lvTaiLieu.Items.Remove(dsChon[0]);
+                    }
+                    foreach (TaiLieu item in lvTaiLieu.SelectedItems)
+                    {
+                        taiLieuList.Remove(item);
+                    }
+                }
+            }
+        }
+
+        private void BtnSapXep_Click(object sender, RoutedEventArgs e)
+        {
+            lvTaiLieu.Items.Clear();
+            taiLieuList.Sort(delegate(TaiLieu x, TaiLieu y)
+            {
+                return x.ngayPhatHanh.CompareTo(y.ngayPhatHanh);
+            });
+            foreach (TaiLieu taiLieu in taiLieuList)
+            {
+                lvTaiLieu.Items.Add(taiLieu);
+            }
         }
     }
 }

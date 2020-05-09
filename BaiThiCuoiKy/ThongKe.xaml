@@ -34,7 +34,7 @@
                     <GridViewColumn Header="Mã tài liệu" Width="70" DisplayMemberBinding="{Binding maTaiLieu}"></GridViewColumn>
                     <GridViewColumn Header="Tên tài liệu" Width="250"  DisplayMemberBinding="{Binding tenTaiLieu}"></GridViewColumn>
                     <GridViewColumn Header="Ngày phát hành" Width="100"  DisplayMemberBinding="{Binding ngayPhatHanh}"></GridViewColumn>
-                    <GridViewColumn Header="Tên tác giá" Width="150"  DisplayMemberBinding="{Binding tenTacGia}"></GridViewColumn>
+                    <GridViewColumn Header="Tên tác giả" Width="150"  DisplayMemberBinding="{Binding tenTacGia}"></GridViewColumn>
                     <GridViewColumn Header="Số trang" Width="70"  DisplayMemberBinding="{Binding soTrang}"></GridViewColumn>
                 </GridView>
             </ListView.View>
@@ -61,7 +61,7 @@
                     <GridViewColumn Header="Tên tài liệu" Width="250"  DisplayMemberBinding="{Binding tenTaiLieu}"></GridViewColumn>
                     <GridViewColumn Header="Ngày phát hành" Width="100"  DisplayMemberBinding="{Binding ngayPhatHanh}"></GridViewColumn>
                     <GridViewColumn Header="Chủ đề" Width="150"  DisplayMemberBinding="{Binding chuDe}"></GridViewColumn>
-                    <GridViewColumn Header="Giá" Width="100"  DisplayMemberBinding="{Binding gia}"></GridViewColumn>
+                    <GridViewColumn Header="Giá" Width="100"  DisplayMemberBinding="{Binding Gia}"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

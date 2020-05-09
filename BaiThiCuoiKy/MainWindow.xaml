@@ -28,7 +28,7 @@
                 </Grid.ColumnDefinitions>
                 <Ellipse Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2">
                     <Ellipse.Fill>
-                        <ImageBrush ImageSource="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/324ff8e7-103b-4068-9edd-4994bb411db6/d7dlf9y-83fcf4d2-a587-46d7-bbca-44877e0cbc94.png/v1/fill/w_256,h_256,strp/mortal_kombat_4_scorpion_icono_by_nacho94_d7dlf9y-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0yNTYiLCJwYXRoIjoiXC9mXC8zMjRmZjhlNy0xMDNiLTQwNjgtOWVkZC00OTk0YmI0MTFkYjZcL2Q3ZGxmOXktODNmY2Y0ZDItYTU4Ny00NmQ3LWJiY2EtNDQ4NzdlMGNiYzk0LnBuZyIsIndpZHRoIjoiPD0yNTYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.s9zy0wb9iTdyq37VFYc2f0if4aC6RfMcAphVk4RVdnw"></ImageBrush>
+                        <ImageBrush ImageSource="https://upload.wikimedia.org/wikipedia/vi/a/a5/Logo_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Kinh_T%E1%BA%BF_-_Lu%E1%BA%ADt.png"></ImageBrush>
                     </Ellipse.Fill>
                 </Ellipse>
                 <TextBlock Grid.Row="1" Text="Họ và tên" Margin="5"/>
@@ -85,7 +85,7 @@
                         </Grid>
                     </Button.Content>
                 </Button>
-                <Button x:Name="btnXoa" Grid.Column="2" Grid.Row="0" Margin="10" MinWidth="120">
+                <Button x:Name="btnXoa" Grid.Column="2" Grid.Row="0" Margin="10" MinWidth="120" Click="BtnXoa_Click_1">
                     <Button.Content>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -109,7 +109,7 @@
                         </Grid>
                     </Button.Content>
                 </Button>
-                <Button x:Name="btnSapXep" Grid.Column="0" Grid.Row="1" Margin="10" MinWidth="120">
+                <Button x:Name="btnSapXep" Grid.Column="0" Grid.Row="1" Margin="10" MinWidth="120" Click="BtnSapXep_Click">
                     <Button.Content>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -228,7 +228,7 @@
                     <!--#endregion-->
                 </Grid>
             </GroupBox>
-            <ListView x:Name="lvTaiLieu" Grid.Row="2" Margin="10">
+            <ListView SelectionMode="Multiple" x:Name="lvTaiLieu" Grid.Row="2" Margin="10">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Mã tài liệu" Width="90" DisplayMemberBinding="{Binding maTaiLieu}"></GridViewColumn>
