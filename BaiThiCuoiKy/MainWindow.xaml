@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BaiThiCuoiKy"
         mc:Ignorable="d"
-        Title="BÀI THI CUỐI KỲ KTLT - 2020" Height="543" Width="800">
+        Title="BÀI THI CUỐI KỲ KTLT - 2020" MinHeight="543" MinWidth="800" Height="543" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"></ColumnDefinition>
@@ -50,16 +50,26 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <!--#region Buttons-->
-            <WrapPanel Grid.Row="0" Margin="0,10,0,0">
-                <Button x:Name="btnLuu" Content="Lưu" Margin="10" Width="120" Click="btnLuu_Click"></Button>
-                <Button x:Name="btnLamMoi" Content="Làm Mơi" Margin="10" Width="120" Click="btnLamMoi_Click"></Button>
-                <Button x:Name="btnXoa" Content="Xoá" Margin="10" Width="120"></Button>
-                <Button x:Name="btnThoat" Content="Thoát" Margin="10" Width="120" Click="btnThoat_Click"></Button>
-                <Button x:Name="btnSapXep" Content="Sắp Xếp" Margin="10" Width="120"></Button>
-                <Button x:Name="btnTimKiem" Content="Tìm Kiếm" Margin="10" Width="120"></Button>
-                <Button x:Name="btnTrong" Content="" Margin="10" Width="120"></Button>
-                <Button x:Name="btnThongKe" Content="Thống Kê" Margin="10" Width="120"></Button>
-            </WrapPanel>
+            <Grid Grid.Row="0" Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button x:Name="btnLuu" Grid.Column="0" Grid.Row="0" Content="Lưu" Margin="10" MinWidth="120" Click="btnLuu_Click"></Button>
+                <Button x:Name="btnLamMoi" Grid.Column="1" Grid.Row="0" Content="Làm Mơi" Margin="10" MinWidth="120" Click="btnLamMoi_Click"></Button>
+                <Button x:Name="btnXoa" Grid.Column="2" Grid.Row="0" Content="Xoá" Margin="10" MinWidth="120"></Button>
+                <Button x:Name="btnThoat" Grid.Column="3" Grid.Row="0" Content="Thoát" Margin="10" MinWidth="120" Click="btnThoat_Click"></Button>
+                <Button x:Name="btnSapXep" Grid.Column="0" Grid.Row="1" Content="Sắp Xếp" Margin="10" MinWidth="120"></Button>
+                <Button x:Name="btnTimKiem" Grid.Column="1" Grid.Row="1" Content="Tìm Kiếm" Margin="10" MinWidth="120"></Button>
+                <Button x:Name="btnTrong" Grid.Column="2" Grid.Row="1" Content="" Margin="10" MinWidth="120"></Button>
+                <Button x:Name="btnThongKe" Grid.Column="3" Grid.Row="1" Content="Thống Kê" Margin="10" MinWidth="120" Click="btnThongKe_Click"></Button>
+            </Grid>
             <!--#endregion-->
             <GroupBox Grid.Row="1" Margin="10,0">
                 <Grid>
@@ -97,23 +107,20 @@
                              Grid.Row="0" Grid.Column="1"
                              VerticalAlignment="Center"
                              Text="TL01"
-                             Width="170"
                              Margin="0,5,5,5" TextChanged="txtMaTaiLieu_TextChanged"></TextBox>
                     <TextBox x:Name="txtTenTaiLieu"
                              Grid.Row="1" Grid.Column="1"
                              VerticalAlignment="Center"
                              Text="Giao trinh"
-                             Width="170"
                              Margin="0,5,5,5" TextChanged="txtTenTaiLieu_TextChanged"></TextBox>
                     <DatePicker x:Name="dtpNgayPhatHanh"
                                 Grid.Row="2" Grid.Column="1"
                                 VerticalAlignment="Center"
                                 Margin="0,5,5,5"
-                                Width="170" SelectedDateChanged="dtpNgayPhatHanh_SelectedDateChanged"></DatePicker>
+                                SelectedDateChanged="dtpNgayPhatHanh_SelectedDateChanged"></DatePicker>
                     <ComboBox x:Name="cmbTheLoai"
                               Grid.Row="0" Grid.Column="3"
                               VerticalAlignment="Center"
-                              Width="170"
                               Margin="0,5,5,5" SelectionChanged="cmbTheLoai_SelectionChanged">
                         <ComboBoxItem Content="Sách"></ComboBoxItem>
                         <ComboBoxItem Content="Tạp chí"></ComboBoxItem>
@@ -122,14 +129,12 @@
                              Grid.Row="1" Grid.Column="3"
                              VerticalAlignment="Center"
                              Text="Hồ Trung Thành"
-                             Width="170"
                              Margin="0,5,5,5"
                              Visibility="Hidden" TextChanged="txtTenTacGia_TextChanged"></TextBox>
                     <TextBox x:Name="txtChuDe"
                              Grid.Row="1" Grid.Column="3"
                              VerticalAlignment="Center"
                              Text="Thời Trang"
-                             Width="170"
                              Margin="0,5,5,5"
                              Visibility="Hidden" TextChanged="txtChuDe_TextChanged"></TextBox>
                     <TextBox x:Name="txtSoTrang"
@@ -142,7 +147,6 @@
                              Grid.Row="2" Grid.Column="3"
                              VerticalAlignment="Center"
                              Text="500"
-                             Width="170"
                              Margin="0,5,5,5" Visibility="Hidden" TextChanged="txtGia_TextChanged"></TextBox>
                     <!--#endregion-->
                 </Grid>

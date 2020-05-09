@@ -181,5 +181,11 @@ namespace BaiThiCuoiKy
             ChuaNhapTenTacGia.Visibility = Visibility.Hidden;
         }
         #endregion
+
+        private void btnThongKe_Click(object sender, RoutedEventArgs e)
+        {
+            ThongKe thongKeWindow = new ThongKe();
+            thongKeWindow.Show();
+        }
     }
 }
