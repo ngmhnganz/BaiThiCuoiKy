@@ -8,16 +8,16 @@ namespace BaiThiCuoiKy
 {
     public class TaiLieu
     {
-        public string ma { get; set; }
-        public string ten { get; set; }
+        public string maTaiLieu { get; set; }
+        public string tenTaiLieu { get; set; }
         public DateTime ngayPhatHanh { get; set; }
         public string theLoai { get; set; }
           
 
         public TaiLieu(string maTaiLieu, string tenTaiLieu, DateTime ngayPhatHanh, string theLoai)
         {
-            this.ma = maTaiLieu;
-            this.ten = tenTaiLieu;
+            this.maTaiLieu = maTaiLieu;
+            this.tenTaiLieu = tenTaiLieu;
             this.ngayPhatHanh = ngayPhatHanh;
             this.theLoai = theLoai;
         

@@ -142,20 +142,35 @@ namespace BaiThiCuoiKy
             #endregion
             if (!conLoi)
             {
+                lvTaiLieu.Items.Clear();
                 if (cmbTheLoai.SelectedIndex == 0)
                 {
+                    Sach sach = new Sach();
+                    sach.maTaiLieu = txtMaTaiLieu.Text;
+                    sach.tenTaiLieu = txtTenTaiLieu.Text;
+                    sach.ngayPhatHanh = dtpNgayPhatHanh.SelectedDate.Value;
+                    sach.tenTacGia = txtTenTacGia.Text;
+                    sach.soTrang = txtSoTrang.Text;
+                    sach.theLoai = cmbTheLoai.Text;
+                    taiLieuList.Add(sach);
 
-                }else if (cmbTheLoai.SelectedIndex == 1)
+                }
+               else if (cmbTheLoai.SelectedIndex == 1)
                 {
                     TapChi tapChi = new TapChi();
-                    tapChi.ma = txtMaTaiLieu.Text;
-                    tapChi.ten = txtTenTacGia.Text;
+                    tapChi.maTaiLieu = txtMaTaiLieu.Text;
+                    tapChi.tenTaiLieu = txtTenTaiLieu.Text;
                     tapChi.ngayPhatHanh= dtpNgayPhatHanh.SelectedDate.Value;
-                    tapChi.theLoai = "tạp chí";
+                    tapChi.theLoai = cmbTheLoai.Text;
+                    tapChi.chuDe = txtChuDe.Text;
+                    tapChi.Gia = Convert.ToDouble(txtGia.Text);
                     taiLieuList.Add(tapChi);
-                    lvTaiLieu.ItemsSource = taiLieuList;
-                }
 
+                }
+                foreach (TaiLieu taiLieu in taiLieuList)
+                {
+                    lvTaiLieu.Items.Add(taiLieu);
+                }
 
             }
 
@@ -201,6 +216,7 @@ namespace BaiThiCuoiKy
         {
             ThongKe thongKeWindow = new ThongKe();
             thongKeWindow.Show();
+
         }
     }
 }
