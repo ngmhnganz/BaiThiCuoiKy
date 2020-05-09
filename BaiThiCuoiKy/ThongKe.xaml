@@ -21,14 +21,14 @@
             <TextBlock Text="Sách" FontSize="16" VerticalAlignment="Center" Margin="5"></TextBlock>
             <TextBlock Text="Số tài liệu" Name="txbSoSach" VerticalAlignment="Center" FontSize="16" Margin="5" Grid.Column="1"></TextBlock>
         </Grid>
-        <ListView Grid.Row="1" Margin="5">
+        <ListView x:Name="lvSach" Grid.Row="1" Margin="5">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Mã tài liệu" Width="70"></GridViewColumn>
-                    <GridViewColumn Header="Tên tài liệu" Width="250"></GridViewColumn>
-                    <GridViewColumn Header="Ngày phát hành" Width="100"></GridViewColumn>
-                    <GridViewColumn Header="Tên tác giá" Width="150"></GridViewColumn>
-                    <GridViewColumn Header="Số trang" Width="70"></GridViewColumn>
+                    <GridViewColumn Header="Mã tài liệu" DisplayMemberBinding="{Binding ma}" Width="70"></GridViewColumn>
+                    <GridViewColumn Header="Tên tài liệu" DisplayMemberBinding="{Binding ten}" Width="250"></GridViewColumn>
+                    <GridViewColumn Header="Ngày phát hành" Width="100" DisplayMemberBinding="{Binding ngayPhatHanh}"></GridViewColumn>
+                    <GridViewColumn Header="Tên tác giá" Width="150" DisplayMemberBinding="{Binding tenTacGia}"></GridViewColumn>
+                    <GridViewColumn Header="Số trang" Width="70" DisplayMemberBinding="{Binding soTrang}"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -40,14 +40,14 @@
             <TextBlock Text="Tạp chí" FontSize="16" VerticalAlignment="Center" Margin="5"></TextBlock>
             <TextBlock Text="Số tài liệu" Name="txbSoTapChi" VerticalAlignment="Center" FontSize="16" Margin="5" Grid.Column="1"></TextBlock>
         </Grid>
-        <ListView Grid.Row="3" Margin="5">
+        <ListView x:Name="lvTapChi" Grid.Row="3" Margin="5">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Mã tài liệu" Width="70"></GridViewColumn>
-                    <GridViewColumn Header="Tên tài liệu" Width="250"></GridViewColumn>
-                    <GridViewColumn Header="Ngày phát hành" Width="100"></GridViewColumn>
-                    <GridViewColumn Header="Chủ đề" Width="150"></GridViewColumn>
-                    <GridViewColumn Header="Giá" Width="100"></GridViewColumn>
+                    <GridViewColumn Header="Mã tài liệu" DisplayMemberBinding="{Binding ma}" Width="70"></GridViewColumn>
+                    <GridViewColumn Header="Tên tài liệu" DisplayMemberBinding="{Binding ten}" Width="250"></GridViewColumn>
+                    <GridViewColumn Header="Ngày phát hành" DisplayMemberBinding="{Binding ngayPhatHanh}" Width="100"></GridViewColumn>
+                    <GridViewColumn Header="Chủ đề" DisplayMemberBinding="{Binding chuDe}" Width="150"></GridViewColumn>
+                    <GridViewColumn Header="Giá" DisplayMemberBinding="{Binding gia}" Width="100"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
