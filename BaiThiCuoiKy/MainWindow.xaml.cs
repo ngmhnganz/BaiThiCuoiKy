@@ -38,7 +38,7 @@ namespace BaiThiCuoiKy
         private void cmbTheLoai_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ChuaChonTheLoai.Visibility = Visibility.Hidden;
-            if (cmbTheLoai.SelectedIndex==0)
+            if (cmbTheLoai.SelectedIndex == 0)
             {
                 txtTenTacGia.Visibility = Visibility.Visible;
                 txbTenTacGia.Visibility = Visibility.Visible;
@@ -50,7 +50,7 @@ namespace BaiThiCuoiKy
                 txtGia.Visibility = Visibility.Hidden;
 
             }
-            else if (cmbTheLoai.SelectedIndex==1)
+            else if (cmbTheLoai.SelectedIndex == 1)
             {
                 txbChuDe.Visibility = Visibility.Visible;
                 txtChuDe.Visibility = Visibility.Visible;
@@ -65,7 +65,7 @@ namespace BaiThiCuoiKy
 
         private void btnThoat_Click(object sender, RoutedEventArgs e)
         {
-             MessageBoxResult result = MessageBox.Show("Bạn muốn thoát chương trình?", "Thoát chương trình", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("Bạn muốn thoát chương trình?", "Thoát chương trình", MessageBoxButton.YesNo);
             switch (result)
             {
                 case MessageBoxResult.Yes:
@@ -157,12 +157,12 @@ namespace BaiThiCuoiKy
                     taiLieuList.Add(sach);
 
                 }
-               else if (cmbTheLoai.SelectedIndex == 1)
+                else if (cmbTheLoai.SelectedIndex == 1)
                 {
                     TapChi tapChi = new TapChi();
                     tapChi.maTaiLieu = txtMaTaiLieu.Text;
                     tapChi.tenTaiLieu = txtTenTaiLieu.Text;
-                    tapChi.ngayPhatHanh= dtpNgayPhatHanh.SelectedDate.Value;
+                    tapChi.ngayPhatHanh = dtpNgayPhatHanh.SelectedDate.Value;
                     tapChi.theLoai = cmbTheLoai.Text;
                     tapChi.chuDe = txtChuDe.Text;
                     tapChi.Gia = Convert.ToDouble(txtGia.Text);
@@ -219,6 +219,63 @@ namespace BaiThiCuoiKy
         {
             ThongKe thongKeWindow = new ThongKe(tapChiList, sachList);
             thongKeWindow.Show();
+        }
+
+        private void BtnXoa_Click_1(object sender, RoutedEventArgs e)
+        {
+            int nRemove = lvTaiLieu.Items.IndexOf(lvTaiLieu.SelectedItem);
+            if (nRemove < 0)
+            {
+                MessageBox.Show("Bạn chưa chọn nội dung để xóa", "CHỌN NỘI DUNG", MessageBoxButton.OK);
+            }
+            else
+            {
+                MessageBoxResult ret = MessageBox.Show("Bạn muốn xóa ?", "Hỏi xóa ", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (ret == MessageBoxResult.No)
+                    return;
+                else
+                {
+                    var dsChon = lvTaiLieu.SelectedItems;
+                    while (dsChon.Count > 0)
+                    {
+                        lvTaiLieu.Items.Remove(dsChon[0]);
+                    }
+                }
+            }
+        }
+
+        private void BtnSapXep_Click(object sender, RoutedEventArgs e)
+        {
+            lvTaiLieu.Items.Clear();
+            taiLieuList.Sort(new TaiLieu());
+            foreach (TaiLieu tailieu in taiLieuList)
+            {
+                lvTaiLieu.Items.Add(tailieu);
+            }
+        }
+        private void LvTaiLieu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count==0)
+                return;
+            else
+            {
+                TaiLieu tl = e.AddedItems[0] as TaiLieu;
+                txtTenTaiLieu.Text = tl.tenTaiLieu;
+                txtMaTaiLieu.Text = tl.maTaiLieu;
+                cmbTheLoai.Text = tl.theLoai;
+                if(cmbTheLoai.Text=="Sách")
+                {
+                    Sach sach1 = e.AddedItems[0] as Sach;
+                    txtTenTacGia.Text = sach1.tenTacGia;
+                    txtSoTrang.Text = sach1.soTrang;
+                }
+                if(cmbTheLoai.Text =="Tạp chí")
+                {
+                    TapChi tc1 = e.AddedItems[0] as TapChi;
+                    txtChuDe.Text = tc1.chuDe;
+                    txtGia.Text = tc1.Gia.ToString();
+                }
+            }
         }
     }
 }
