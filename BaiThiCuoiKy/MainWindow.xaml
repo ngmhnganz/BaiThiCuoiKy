@@ -28,7 +28,7 @@
                 </Grid.ColumnDefinitions>
                 <Ellipse Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2">
                     <Ellipse.Fill>
-                        <ImageBrush ImageSource="C:\Users\ngmin\Desktop\NewMat\me.png"></ImageBrush>
+                        <ImageBrush></ImageBrush>
                     </Ellipse.Fill>
                 </Ellipse>
                 <TextBlock Grid.Row="1" Text="Họ và tên" Margin="5"/>

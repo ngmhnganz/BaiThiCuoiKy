@@ -29,7 +29,7 @@ namespace BaiThiCuoiKy
 
         private void BtnXoa_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
 
         private void cmbTheLoai_SelectionChanged(object sender, SelectionChangedEventArgs e)
