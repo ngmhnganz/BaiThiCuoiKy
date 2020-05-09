@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BaiThiCuoiKy
 {
-    public class TaiLieu
+    public class TaiLieu:IComparer<TaiLieu>
     {
         public string maTaiLieu { get; set; }
         public string tenTaiLieu { get; set; }
@@ -26,6 +26,15 @@ namespace BaiThiCuoiKy
         {
 
         }
-        
+        public int Compare(TaiLieu x, TaiLieu y)
+        {
+            int kq= x.ngayPhatHanh.CompareTo(y.ngayPhatHanh);
+            if (kq == 0)
+            {
+                return x.maTaiLieu.CompareTo(y.maTaiLieu);
+            }
+            return kq;
+        }
+       
     }
 }

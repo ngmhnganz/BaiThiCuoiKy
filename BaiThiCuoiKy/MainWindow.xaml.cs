@@ -30,10 +30,30 @@ namespace BaiThiCuoiKy
 
         private void BtnXoa_Click(object sender, RoutedEventArgs e)
         {
-            Close();
-        }
+            int nRemove = lvTaiLieu.Items.IndexOf(lvTaiLieu.SelectedItem);
+            if (nRemove < 0)
+            {
+                MessageBox.Show("Bạn chưa chọn nội dung để xóa", "CHỌN NỘI DUNG", MessageBoxButton.OK);
+            }
+            else
+            {
+                MessageBoxResult ret = MessageBox.Show("Bạn muốn xóa ?", "Hỏi xóa ", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (ret == MessageBoxResult.No)
+                    return;
+                else
+                {
+                    lvTaiLieu.Items.Clear();
+                    var dsChon = lvTaiLieu.SelectedIndex;
+                      taiLieuList.RemoveAt(dsChon + 1);
+                    foreach (TaiLieu tl in taiLieuList)
+                    {
+                        lvTaiLieu.Items.Add(tl);
+                    }
+                }
+            }
+                }
 
-        private void cmbTheLoai_SelectionChanged(object sender, SelectionChangedEventArgs e)
+                private void cmbTheLoai_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ChuaChonTheLoai.Visibility = Visibility.Hidden;
             if (cmbTheLoai.SelectedIndex==0)
@@ -217,6 +237,23 @@ namespace BaiThiCuoiKy
             ThongKe thongKeWindow = new ThongKe();
             thongKeWindow.Show();
 
+        }
+
+        private void btnSapXep_click(object sender, RoutedEventArgs e)
+        {
+            lvTaiLieu.Items.Clear();
+            taiLieuList.Sort(new TaiLieu());
+            foreach (TaiLieu taiLieu in taiLieuList)
+            {
+                lvTaiLieu.Items.Add(taiLieu);
+            }
+        }
+
+        private void lvTaiLieu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           // txtMaTaiLieu.Text = lvTaiLieu.SelectedItems[0].ToString();
+         //   txtTenTaiLieu.Text = lvTaiLieu.SelectedItems[1].ToString();
+            //dtpNgayPhatHanh.Text = lvTaiLieu.SelectedItems[2].ToString();
         }
     }
 }

@@ -63,9 +63,9 @@
                 </Grid.RowDefinitions>
                 <Button x:Name="btnLuu" Grid.Column="0" Grid.Row="0" Content="Lưu" Margin="10" MinWidth="120" Click="btnLuu_Click"></Button>
                 <Button x:Name="btnLamMoi" Grid.Column="1" Grid.Row="0" Content="Làm Mơi" Margin="10" MinWidth="120" Click="btnLamMoi_Click"></Button>
-                <Button x:Name="btnXoa" Grid.Column="2" Grid.Row="0" Content="Xoá" Margin="10" MinWidth="120"></Button>
+                <Button x:Name="btnXoa" Grid.Column="2" Grid.Row="0" Content="Xoá" Margin="10" MinWidth="120" Click="BtnXoa_Click"></Button>
                 <Button x:Name="btnThoat" Grid.Column="3" Grid.Row="0" Content="Thoát" Margin="10" MinWidth="120" Click="btnThoat_Click"></Button>
-                <Button x:Name="btnSapXep" Grid.Column="0" Grid.Row="1" Content="Sắp Xếp" Margin="10" MinWidth="120"></Button>
+                <Button x:Name="btnSapXep" Grid.Column="0" Grid.Row="1" Content="Sắp Xếp" Margin="10" MinWidth="120" Click="btnSapXep_click"></Button>
                 <Button x:Name="btnTimKiem" Grid.Column="1" Grid.Row="1" Content="Tìm Kiếm" Margin="10" MinWidth="120"></Button>
                 <TextBox x:Name="txtTimKiem" Grid.Column="2" Grid.Row="1" Margin="10" MinWidth="120"></TextBox>
                 <Button x:Name="btnThongKe" Grid.Column="3" Grid.Row="1" Content="Thống Kê" Margin="10" MinWidth="120" Click="btnThongKe_Click"></Button>
@@ -151,7 +151,7 @@
                     <!--#endregion-->
                 </Grid>
             </GroupBox>
-            <ListView x:Name="lvTaiLieu" Grid.Row="2" Margin="10">
+            <ListView x:Name="lvTaiLieu" Grid.Row="2" Margin="10" SelectionChanged="lvTaiLieu_SelectionChanged" SelectionMode="Multiple">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Mã tài liệu" Width="90" DisplayMemberBinding="{Binding maTaiLieu}"></GridViewColumn>
