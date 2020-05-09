@@ -22,6 +22,7 @@ namespace BaiThiCuoiKy
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<TaiLieu> taiLieuList = new List<TaiLieu>();
         public MainWindow()
         {
             InitializeComponent();
@@ -141,7 +142,21 @@ namespace BaiThiCuoiKy
             #endregion
             if (!conLoi)
             {
-                //Xử lý lưu
+                if (cmbTheLoai.SelectedIndex == 0)
+                {
+
+                }else if (cmbTheLoai.SelectedIndex == 1)
+                {
+                    TapChi tapChi = new TapChi();
+                    tapChi.ma = txtMaTaiLieu.Text;
+                    tapChi.ten = txtTenTacGia.Text;
+                    tapChi.ngayPhatHanh= dtpNgayPhatHanh.SelectedDate.Value;
+                    tapChi.theLoai = "tạp chí";
+                    taiLieuList.Add(tapChi);
+                    lvTaiLieu.ItemsSource = taiLieuList;
+                }
+
+
             }
 
         }

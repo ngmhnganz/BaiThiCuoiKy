@@ -8,25 +8,24 @@ namespace BaiThiCuoiKy
 {
     public class TaiLieu
     {
-        public string MaTaiLieu { get; set; }
-        public string TenTaiLieu { get; set; }
-        public DateTime NgayPhatHanh { get; set; }
-        public string TheLoai { get; set; }
-        public string TenTacGia { get; set; }
-        public string SoTrang { get; set; }
+        public string ma { get; set; }
+        public string ten { get; set; }
+        public DateTime ngayPhatHanh { get; set; }
+        public string theLoai { get; set; }
+          
 
-        public TaiLieu(string maTaiLieu, string tenTaiLieu, DateTime ngayPhatHanh, string theLoai, string tenTacGia, string soTrang)
+        public TaiLieu(string maTaiLieu, string tenTaiLieu, DateTime ngayPhatHanh, string theLoai)
         {
-            MaTaiLieu = maTaiLieu;
-            TenTaiLieu = tenTaiLieu;
-            NgayPhatHanh = ngayPhatHanh;
-            TheLoai = theLoai;
-            TenTacGia = tenTacGia;
-            SoTrang = soTrang;
+            this.ma = maTaiLieu;
+            this.ten = tenTaiLieu;
+            this.ngayPhatHanh = ngayPhatHanh;
+            this.theLoai = theLoai;
+        
         }
-        public override string ToString()
+        public TaiLieu()
         {
-            return base.ToString()+10;
+
         }
+        
     }
 }
