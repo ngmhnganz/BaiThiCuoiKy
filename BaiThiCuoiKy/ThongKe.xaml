@@ -18,19 +18,16 @@
                 <ColumnDefinition Width="150"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Sách" FontSize="16" VerticalAlignment="Center" Margin="5"></TextBlock>
-            <TextBlock Text="Số tài liệu" Name="txbSoSach" VerticalAlignment="Center" FontSize="16" Margin="5" Grid.Column="1"></TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="https://img.icons8.com/plasticine/2x/books.png" Margin="5"/>
+                <TextBlock Grid.Column="1" Text="Sách" FontSize="16" VerticalAlignment="Center" Margin="5"></TextBlock>
+            </Grid>
+            <TextBlock Text="" Name="txbSoSach" VerticalAlignment="Center" FontSize="16" Margin="5" Grid.Column="1"></TextBlock>
         </Grid>
-<<<<<<< HEAD
-        <ListView x:Name="lvSach" Grid.Row="1" Margin="5">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Mã tài liệu" DisplayMemberBinding="{Binding ma}" Width="70"></GridViewColumn>
-                    <GridViewColumn Header="Tên tài liệu" DisplayMemberBinding="{Binding ten}" Width="250"></GridViewColumn>
-                    <GridViewColumn Header="Ngày phát hành" Width="100" DisplayMemberBinding="{Binding ngayPhatHanh}"></GridViewColumn>
-                    <GridViewColumn Header="Tên tác giá" Width="150" DisplayMemberBinding="{Binding tenTacGia}"></GridViewColumn>
-                    <GridViewColumn Header="Số trang" Width="70" DisplayMemberBinding="{Binding soTrang}"></GridViewColumn>
-=======
         <ListView Grid.Row="1" Margin="5" Name="lvSach">
             <ListView.View>
                 <GridView>
@@ -39,7 +36,6 @@
                     <GridViewColumn Header="Ngày phát hành" Width="100"  DisplayMemberBinding="{Binding ngayPhatHanh}"></GridViewColumn>
                     <GridViewColumn Header="Tên tác giá" Width="150"  DisplayMemberBinding="{Binding tenTacGia}"></GridViewColumn>
                     <GridViewColumn Header="Số trang" Width="70"  DisplayMemberBinding="{Binding soTrang}"></GridViewColumn>
->>>>>>> 479097641ad3e6cb36230a4a7044c826938ca82d
                 </GridView>
             </ListView.View>
         </ListView>
@@ -48,19 +44,16 @@
                 <ColumnDefinition Width="150"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Tạp chí" FontSize="16" VerticalAlignment="Center" Margin="5"></TextBlock>
-            <TextBlock Text="Số tài liệu" Name="txbSoTapChi" VerticalAlignment="Center" FontSize="16" Margin="5" Grid.Column="1"></TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="https://cdn1.iconfinder.com/data/icons/creative-design-honey-vol-2/64/MAGAZINE_LAYOUT-512.png" Margin="5"></Image>
+                 <TextBlock Grid.Column="1" Text="Tạp chí" FontSize="16" VerticalAlignment="Center" Margin="5"></TextBlock>
+            </Grid>
+            <TextBlock Text="" Name="txbSoTapChi" VerticalAlignment="Center" FontSize="16" Margin="5" Grid.Column="1"></TextBlock>
         </Grid>
-<<<<<<< HEAD
-        <ListView x:Name="lvTapChi" Grid.Row="3" Margin="5">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Mã tài liệu" DisplayMemberBinding="{Binding ma}" Width="70"></GridViewColumn>
-                    <GridViewColumn Header="Tên tài liệu" DisplayMemberBinding="{Binding ten}" Width="250"></GridViewColumn>
-                    <GridViewColumn Header="Ngày phát hành" DisplayMemberBinding="{Binding ngayPhatHanh}" Width="100"></GridViewColumn>
-                    <GridViewColumn Header="Chủ đề" DisplayMemberBinding="{Binding chuDe}" Width="150"></GridViewColumn>
-                    <GridViewColumn Header="Giá" DisplayMemberBinding="{Binding gia}" Width="100"></GridViewColumn>
-=======
         <ListView Grid.Row="3" Margin="5" Name="lvTapChi">
             <ListView.View>
                 <GridView>
@@ -69,7 +62,6 @@
                     <GridViewColumn Header="Ngày phát hành" Width="100"  DisplayMemberBinding="{Binding ngayPhatHanh}"></GridViewColumn>
                     <GridViewColumn Header="Chủ đề" Width="150"  DisplayMemberBinding="{Binding chuDe}"></GridViewColumn>
                     <GridViewColumn Header="Giá" Width="100"  DisplayMemberBinding="{Binding gia}"></GridViewColumn>
->>>>>>> 479097641ad3e6cb36230a4a7044c826938ca82d
                 </GridView>
             </ListView.View>
         </ListView>

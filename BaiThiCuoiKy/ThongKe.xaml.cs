@@ -17,14 +17,27 @@ namespace BaiThiCuoiKy
     /// <summary>
     /// Interaction logic for ThongKe.xaml
     /// </summary>
-    public partial class ThongKe : MainWindow
+    public partial class ThongKe : Window
     {
-        List<TaiLieu> taiLieuList = new List<TaiLieu>();
-        public ThongKe(List<TaiLieu> list)
+        List<TapChi> tapchiList = new List<TapChi>();
+        List<Sach> sachList = new List<Sach>();
+        public ThongKe(List<TapChi> tclist, List<Sach> slist)
         {
             InitializeComponent();
-            taiLieuList = new List<TaiLieu>(list);
+            tapchiList = new List<TapChi>(tclist);
+            sachList = new List<Sach>(slist);
+            foreach (TapChi tapChi in tapchiList)
+            {
+                lvTapChi.Items.Add(tapChi);
+            }
+            txbSoSach.Text = sachList.Count.ToString() + " tài liệu";
+            txbSoTapChi.Text = tapchiList.Count.ToString() + " tài liệu";
+            foreach (Sach sach in sachList)
+            {
+                lvSach.Items.Add(sach);
+            }
 
         }
+        
     }
 }

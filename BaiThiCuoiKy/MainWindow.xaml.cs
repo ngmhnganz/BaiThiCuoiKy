@@ -23,6 +23,8 @@ namespace BaiThiCuoiKy
     public partial class MainWindow : Window
     {
         List<TaiLieu> taiLieuList = new List<TaiLieu>();
+        List<TapChi> tapChiList = new List<TapChi>();
+        List<Sach> sachList = new List<Sach>();
         public MainWindow()
         {
             InitializeComponent();
@@ -151,6 +153,7 @@ namespace BaiThiCuoiKy
                     sach.tenTacGia = txtTenTacGia.Text;
                     sach.soTrang = txtSoTrang.Text;
                     sach.theLoai = cmbTheLoai.Text;
+                    sachList.Add(sach);
                     taiLieuList.Add(sach);
 
                 }
@@ -163,6 +166,7 @@ namespace BaiThiCuoiKy
                     tapChi.theLoai = cmbTheLoai.Text;
                     tapChi.chuDe = txtChuDe.Text;
                     tapChi.Gia = Convert.ToDouble(txtGia.Text);
+                    tapChiList.Add(tapChi);
                     taiLieuList.Add(tapChi);
 
                 }
@@ -213,7 +217,7 @@ namespace BaiThiCuoiKy
 
         private void btnThongKe_Click(object sender, RoutedEventArgs e)
         {
-            ThongKe thongKeWindow = new ThongKe(taiLieuList);
+            ThongKe thongKeWindow = new ThongKe(tapChiList, sachList);
             thongKeWindow.Show();
         }
     }

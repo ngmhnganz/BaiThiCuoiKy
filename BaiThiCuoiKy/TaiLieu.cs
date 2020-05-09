@@ -12,7 +12,6 @@ namespace BaiThiCuoiKy
         public string tenTaiLieu { get; set; }
         public DateTime ngayPhatHanh { get; set; }
         public string theLoai { get; set; }
-          
 
         public TaiLieu(string maTaiLieu, string tenTaiLieu, DateTime ngayPhatHanh, string theLoai)
         {

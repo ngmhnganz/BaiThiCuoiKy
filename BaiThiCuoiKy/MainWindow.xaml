@@ -28,7 +28,7 @@
                 </Grid.ColumnDefinitions>
                 <Ellipse Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2">
                     <Ellipse.Fill>
-                        <ImageBrush ImageSource=""></ImageBrush>
+                        <ImageBrush ImageSource="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/324ff8e7-103b-4068-9edd-4994bb411db6/d7dlf9y-83fcf4d2-a587-46d7-bbca-44877e0cbc94.png/v1/fill/w_256,h_256,strp/mortal_kombat_4_scorpion_icono_by_nacho94_d7dlf9y-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0yNTYiLCJwYXRoIjoiXC9mXC8zMjRmZjhlNy0xMDNiLTQwNjgtOWVkZC00OTk0YmI0MTFkYjZcL2Q3ZGxmOXktODNmY2Y0ZDItYTU4Ny00NmQ3LWJiY2EtNDQ4NzdlMGNiYzk0LnBuZyIsIndpZHRoIjoiPD0yNTYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.s9zy0wb9iTdyq37VFYc2f0if4aC6RfMcAphVk4RVdnw"></ImageBrush>
                     </Ellipse.Fill>
                 </Ellipse>
                 <TextBlock Grid.Row="1" Text="Họ và tên" Margin="5"/>
@@ -61,14 +61,91 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                <Button x:Name="btnLuu" Grid.Column="0" Grid.Row="0" Content="Lưu" Margin="10" MinWidth="120" Click="btnLuu_Click"></Button>
-                <Button x:Name="btnLamMoi" Grid.Column="1" Grid.Row="0" Content="Làm Mơi" Margin="10" MinWidth="120" Click="btnLamMoi_Click"></Button>
-                <Button x:Name="btnXoa" Grid.Column="2" Grid.Row="0" Content="Xoá" Margin="10" MinWidth="120"></Button>
-                <Button x:Name="btnThoat" Grid.Column="3" Grid.Row="0" Content="Thoát" Margin="10" MinWidth="120" Click="btnThoat_Click"></Button>
-                <Button x:Name="btnSapXep" Grid.Column="0" Grid.Row="1" Content="Sắp Xếp" Margin="10" MinWidth="120"></Button>
-                <Button x:Name="btnTimKiem" Grid.Column="1" Grid.Row="1" Content="Tìm Kiếm" Margin="10" MinWidth="120"></Button>
+                <Button x:Name="btnLuu" Grid.Column="0" Grid.Row="0" Margin="10" MinWidth="120" Click="btnLuu_Click">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="https://cdn.iconscout.com/icon/free/png-256/save-1659426-1408816.png"></Image>
+                            <TextBlock Grid.Column="1" Text="Lưu" Margin="10,0,0,0"></TextBlock>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+                <Button x:Name="btnLamMoi" Grid.Column="1" Grid.Row="0" Margin="10" MinWidth="120" Click="btnLamMoi_Click">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="https://cdn.iconscout.com/icon/free/png-256/refresh-1781197-1518571.png"></Image>
+                            <TextBlock Grid.Column="1" Text="Làm Mới" Margin="10,0,0,0"></TextBlock>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+                <Button x:Name="btnXoa" Grid.Column="2" Grid.Row="0" Margin="10" MinWidth="120">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="https://image.flaticon.com/icons/png/128/64/64022.png"></Image>
+                            <TextBlock Grid.Column="1" Text="Xoá" Margin="10,0,0,0"></TextBlock>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+                <Button x:Name="btnThoat" Grid.Column="3" Grid.Row="0" Margin="10" MinWidth="120" Click="btnThoat_Click">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="https://www.materialui.co/materialIcons/navigation/close_black_256x256.png"></Image>
+                            <TextBlock Grid.Column="1" Text="Thoát" Margin="10,0,0,0"></TextBlock>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+                <Button x:Name="btnSapXep" Grid.Column="0" Grid.Row="1" Margin="10" MinWidth="120">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="https://image.flaticon.com/icons/png/512/32/32080.png"></Image>
+                            <TextBlock Grid.Column="1" Text="Sắp Xếp" Margin="10,0,0,0"></TextBlock>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+                <Button x:Name="btnTimKiem" Grid.Column="1" Grid.Row="1" Margin="10" MinWidth="120">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="https://image.flaticon.com/icons/png/512/61/61088.png"></Image>
+                            <TextBlock Grid.Column="1" Text="Tìm Kiếm" Margin="10,0,0,0"></TextBlock>
+                        </Grid>
+                    </Button.Content>
+                </Button>
                 <TextBox x:Name="txtTimKiem" Grid.Column="2" Grid.Row="1" Margin="10" MinWidth="120"></TextBox>
-                <Button x:Name="btnThongKe" Grid.Column="3" Grid.Row="1" Content="Thống Kê" Margin="10" MinWidth="120" Click="btnThongKe_Click"></Button>
+                <Button x:Name="btnThongKe" Grid.Column="3" Grid.Row="1" Margin="10" MinWidth="120" Click="btnThongKe_Click">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="https://cdn.iconscout.com/icon/free/png-256/statistical-analysis-1530978-1292433.png"></Image>
+                            <TextBlock Grid.Column="1" Text="Thống Kê" Margin="10,0,0,0"></TextBlock>
+                        </Grid>
+                    </Button.Content>
+                </Button>
             </Grid>
             <!--#endregion-->
             <GroupBox Grid.Row="1" Margin="10,0">
