@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BaiThiCuoiKy"
         mc:Ignorable="d"
-        Title="BÀI THI CUỐI KỲ KTLT - 2020" MinHeight="543" MinWidth="800" Height="543" Width="800">
+        Title="BÀI ÔN THI CUỐI KÌ" MinHeight="543" MinWidth="800" Height="543" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"></ColumnDefinition>
@@ -228,7 +228,7 @@
                     <!--#endregion-->
                 </Grid>
             </GroupBox>
-            <ListView SelectionMode="Multiple" x:Name="lvTaiLieu" Grid.Row="2" Margin="10">
+            <ListView SelectionMode="Multiple" x:Name="lvTaiLieu" Grid.Row="2" Margin="10" SelectionChanged="LvTaiLieu_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Mã tài liệu" Width="90" DisplayMemberBinding="{Binding maTaiLieu}"></GridViewColumn>
