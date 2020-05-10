@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BaiThiCuoiKy"
         mc:Ignorable="d"
-        Title="BÀI ÔN THI CUỐI KÌ" MinHeight="543" MinWidth="800" Height="543" Width="800">
+        Title="BÀI ÔN THI CUỐI KÌ" MinHeight="543" MinWidth="800" Height="543" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"></ColumnDefinition>

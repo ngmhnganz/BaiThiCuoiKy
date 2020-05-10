@@ -25,6 +25,7 @@ namespace BaiThiCuoiKy
         static List<TaiLieu> taiLieuList = new List<TaiLieu>();
         List<TapChi> tapChiList = new List<TapChi>();
         List<Sach> sachList = new List<Sach>();
+        List<string> imgList = new List<string>();
         public MainWindow()
         {
             InitializeComponent();
@@ -93,6 +94,58 @@ namespace BaiThiCuoiKy
             {
                 ChuaNhapMaTaiLieu.Visibility = Visibility.Visible;
                 conLoi = true;
+            }
+            else
+            {
+                foreach (TaiLieu tai in taiLieuList.ToList())
+                {
+                    if (txtMaTaiLieu.Text == tai.maTaiLieu)
+                    {
+                        if (cmbTheLoai.SelectedIndex == 0)
+                        {
+                            Sach sach = new Sach();
+                            sach.maTaiLieu = txtMaTaiLieu.Text;
+                            sach.tenTaiLieu = txtTenTaiLieu.Text;
+                            sach.ngayPhatHanh = dtpNgayPhatHanh.SelectedDate.Value;
+                            sach.tenTacGia = txtTenTacGia.Text;
+                            sach.soTrang = txtSoTrang.Text;
+                            sach.theLoai = cmbTheLoai.Text;
+                            TaiLieu tai1 = new Sach();
+                            tai1 = tai;
+                            var sachthe = (Sach)tai1;
+                            sachList[sachList.IndexOf(sachthe)] = sach;
+                            taiLieuList[taiLieuList.IndexOf(tai)] = sach;
+
+                        }
+                        else if (cmbTheLoai.SelectedIndex == 1)
+                        {
+                            TapChi tapChi = new TapChi();
+                            tapChi.maTaiLieu = txtMaTaiLieu.Text;
+                            tapChi.tenTaiLieu = txtTenTaiLieu.Text;
+                            tapChi.ngayPhatHanh = dtpNgayPhatHanh.SelectedDate.Value;
+                            tapChi.theLoai = cmbTheLoai.Text;
+                            tapChi.chuDe = txtChuDe.Text;
+                            tapChi.Gia = Convert.ToDouble(txtGia.Text);
+                            TaiLieu tai1 = new TapChi();
+                            tai1 = tai;
+                            var tapchithe = (TapChi)tai1;
+                            tapChiList[tapChiList.IndexOf(tapchithe)] = tapChi;
+                            taiLieuList[taiLieuList.IndexOf(tai)] = tapChi;
+                        }
+                        #region Xoa
+                        txtMaTaiLieu.Clear();
+                        txtTenTacGia.Clear();
+                        txtTenTacGia.Clear();
+                        txtSoTrang.Clear();
+                        txtTenTaiLieu.Clear();
+                        txtChuDe.Clear();
+                        txtGia.Clear();
+                        dtpNgayPhatHanh.SelectedDate = null;
+                        cmbTheLoai.SelectedIndex = -1;
+                        txtMaTaiLieu.Focus();
+                        #endregion
+                    }
+                }
             }
             if (string.IsNullOrEmpty(txtTenTaiLieu.Text))
             {
@@ -165,11 +218,20 @@ namespace BaiThiCuoiKy
                     taiLieuList.Add(tapChi);
 
                 }
-                foreach (TaiLieu taiLieu in taiLieuList)
-                {
-                    lvTaiLieu.Items.Add(taiLieu);
-                }
-
+                txtMaTaiLieu.Clear();
+                txtTenTacGia.Clear();
+                txtTenTacGia.Clear();
+                txtSoTrang.Clear();
+                txtTenTaiLieu.Clear();
+                txtChuDe.Clear();
+                txtGia.Clear();
+                dtpNgayPhatHanh.SelectedDate = null;
+                cmbTheLoai.SelectedIndex = -1;
+                txtMaTaiLieu.Focus();
+            }
+            foreach (TaiLieu taiLieu in taiLieuList)
+            {
+                lvTaiLieu.Items.Add(taiLieu);
             }
 
         }
@@ -218,30 +280,6 @@ namespace BaiThiCuoiKy
 
         private void BtnXoa_Click_1(object sender, RoutedEventArgs e)
         {
-           /* int nRemove = lvTaiLieu.Items.IndexOf(lvTaiLieu.SelectedItem);
-            if (nRemove < 0)
-            {
-                MessageBox.Show("Bạn chưa chọn nội dung để xóa", "CHỌN NỘI DUNG", MessageBoxButton.OK);
-            }
-            else
-            {
-                MessageBoxResult ret = MessageBox.Show("Bạn muốn xóa ?", "Hỏi xóa ", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (ret == MessageBoxResult.No)
-                    return;
-                else
-                {
-                    lvTaiLieu.Items.Clear();
-                    foreach (TaiLieu item in lvTaiLieu.SelectedItems)
-                    {
-                        taiLieuList.RemoveAt(taiLieuList.IndexOf(item));
-                    }
-                    foreach (TaiLieu tailieu in taiLieuList)
-                    {
-                        lvTaiLieu.Items.Add(tailieu);
-                    }
-
-                }
-            }*/
             if (lvTaiLieu.SelectedItems == null)
             {
                 MessageBox.Show("Bạn chưa chọn nội dung để xóa", "CHỌN NỘI DUNG", MessageBoxButton.OK);
@@ -255,6 +293,21 @@ namespace BaiThiCuoiKy
                 {
                     foreach (TaiLieu tailieu in lvTaiLieu.SelectedItems)
                     {
+                        if (tailieu.theLoai=="Tạp chí")
+                        {
+                            TaiLieu tai = new TapChi();
+                            tai = tailieu;
+                            var tapchi = (TapChi)tai;
+                            tapChiList.Remove(tapchi);
+                        }
+                        if (tailieu.theLoai == "Sách")
+                        {
+                            TaiLieu tai1 = new Sach();
+                            tai1 = tailieu;
+                            var sach = (Sach)tai1;
+                            sachList.Remove(sach);
+                        }
+                        
                         taiLieuList.RemoveAt(taiLieuList.IndexOf(tailieu));
                     }
                     lvTaiLieu.Items.Clear();
@@ -301,5 +354,5 @@ namespace BaiThiCuoiKy
 
                 }
             }
-        }
+    }
 }
